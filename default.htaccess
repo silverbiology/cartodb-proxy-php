@@ -1,0 +1,7 @@
+# For security reasons, Option followsymlinks cannot be overridden.
+#Options +FollowSymlinks
+Options +SymLinksIfOwnerMatch
+RewriteEngine on
+
+#RewriteRule ^:80/tiles/(.*[^/])/(\d*)/(\d*)/(.*[^?])? http://{your domain and path to proxy folder}?table=$1&x=$2&y=$3&z=$4 [QSA,L]
+RewriteRule ^:80/tiles/(.*)$ http://{your domain and path to proxy folder}?tileString=$1 [QSA,L]
